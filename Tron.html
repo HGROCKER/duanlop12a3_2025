@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manchester City FC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img {
+      width: 80px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #0099FF;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown a i {
+      margin-left: 5px;
+      font-size: 16px;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+      list-style-type: none;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu li {
+      padding: 8px 16px;
+    }
+    .dropdown-menu li a {
+      text-decoration: none;
+      color: white;
+    }
+    .hero {
+      height: 100vh;
+      background: url('https://images.pexels.com/photos/23013656/pexels-photo-23013656.jpeg?cs=srgb&dl=pexels-yoohaina-edwards-1239981339-23013656.jpg&fm=jpg') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px 20px;
+      border-radius: 10px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #9FD7F9;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #6EC2F7;
+    }
+    .btn {
+      background: #0099FF;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0066cc;
+    }
+    .news {
+      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .news-item {
+      display: flex;
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+      margin-bottom: 40px;
+    }
+    .news-item img {
+      width: 300px;
+      object-fit: cover;
+    }
+    .news-content {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .news-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #9FD7F9;
+    }
+    .news-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #0099FF;
+    }
+    .btn-read {
+      align-self: flex-start;
+      background: #0099FF;
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn-read:hover {
+      background: #0066cc;
+    }
+    footer {
+      background: #0099FF;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer p {
+      font-size: 14px;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      footer p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="https://www.mancity.com/dist/images/logos/crest.svg" alt="Manchester City Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tin-tuc.html">Tin tức</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li class="dropdown"><a href="#">Lịch thi đấu <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="lich-thi-dau.html">Lịch thi đấu</a></li>
+              <li><a href="ket-qua.html">Kết quả</a></li>
+              <li><a href="ban-thang.html">Bàn thắng</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Tickets <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="ve-khach-san.html">Vé & Khách sạn</a></li>
+              <li><a href="chuyen-tham-quan.html">Chuyến tham quan</a></li>
+              <li><a href="quan-li-ve-cua-toi.html">Quản lý vé của tôi</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Club <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="cau-lac-bo.html">Câu lạc bộ</a></li>
+              <li><a href="san-etihad.html">Sân vận động Etihad</a></li>
+              <li><a href="danh-hieu.html">Danh hiệu</a></li>
+              <li><a href="phat-trien-co-so-etihad.html">Phát triển cơ sở Etihad</a></li>
+              <li><a href="du-lich-van-tai.html">Du lịch vận tải</a></li>
+            </ul>
+          </li>
+          <li><a href="more.html">More</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>HEALTHIER LIVES THROUGH FOOTBALL</h1>
+      <p>Khám phá niềm đam mê và sự xuất sắc của Manchester City FC.</p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+    </section>
+    <section class="news">
+    <div class="container">
+      <div class="news-item">
+        <img src="https://www.mancity.com/meta/media/2cmdusdh/pep-cl-presser-wide-2.jpg?width=1136&height=642&mode=crop" alt="Pep Guardiola">
+        <div class="news-content">
+          <h2>PEP: LET'S PROVE WE HAVE SOMETHING SPECIAL AGAINST REAL MADRID</h2>
+          <p>Manchester City sẽ đối đầu với Real Madrid trong trận đấu đầy kịch tính...</p>
+          <a href="news-detail.html" class="btn-read">Read More</a>
+        </div>
+      </section>
+        <section class="news">
+    <div class="container">
+      <div class="news-item">
+        <img src="https://i.ytimg.com/vi/tPvfsCVpMNQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCDAy6ia-9vojGp5iFH41BBeB4TkQ" alt="Pep Guardiola">
+        <div class="news-content">
+          <h2>City 2-3 Real Madrid: Highlights</h2>
+          <p>Trận đấu diễn ra hấp dẫn ngay sau tiếng còi khai cuộc. Trong 15 phút đầu tiên, Real Madrid có 3 cơ hội để ghi bàn nhưng đều không tận dụng được. Và họ đã phải trả giá. Phút 19, Haaland dứt điểm cận thành sắc lẹm, đánh bại thủ môn Courtois giúp Man City vượt lên.</p>
+          <a href="news-detail.html" class="btn-read">Read More</a>
+      </div>
+    </div>
+ 
+  </section>
+  <footer>
+     <div class="container">
+      <p>&copy; 2025 Manchester City FC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
