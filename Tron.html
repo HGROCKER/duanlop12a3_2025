@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manchester City FC</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   <style>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -16,6 +16,7 @@
       background: url('images/background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+      transition: background 0.5s;
     }
     .container {
       width: 90%;
@@ -28,6 +29,7 @@
       background: rgba(0, 0, 0, 0.7);
       padding: 10px 0;
       z-index: 1000;
+      transition: background 0.3s;
     }
     header .container {
       display: flex;
@@ -36,6 +38,10 @@
     }
     .logo img {
       width: 80px;
+      transition: transform 0.3s;
+    }
+    .logo img:hover {
+      transform: scale(1.1);
     }
     nav ul {
       list-style: none;
@@ -43,15 +49,17 @@
     }
     nav ul li {
       margin-left: 20px;
+      position: relative;
     }
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
     nav ul li a:hover {
       color: #0099FF;
+      transform: scale(1.1);
     }
     .dropdown {
       position: relative;
@@ -69,6 +77,7 @@
       top: 100%;
       left: 0;
       z-index: 1000;
+      border-radius: 5px;
     }
     .dropdown:hover .dropdown-menu {
       display: block;
@@ -80,6 +89,9 @@
       text-decoration: none;
       color: white;
     }
+    .sign-in-dropdown .dropdown-menu {
+      left: -100px;
+    }
     .hero {
       height: 100vh;
       background: url('https://images.pexels.com/photos/23013656/pexels-photo-23013656.jpeg?cs=srgb&dl=pexels-yoohaina-edwards-1239981339-23013656.jpg&fm=jpg') no-repeat center center/cover;
@@ -88,37 +100,43 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      transition: background 0.5s;
     }
     .hero-overlay {
       background: rgba(0, 0, 0, 0.5);
       padding: 30px 20px;
       border-radius: 10px;
+      animation: fadeIn 2s ease-in-out;
     }
     .hero h1 {
       font-size: 48px;
       margin-bottom: 20px;
       color: #9FD7F9;
+      animation: fadeIn 1.5s ease-in-out;
     }
     .hero p {
       font-size: 20px;
       margin-bottom: 30px;
-      color: #6EC2F7;
+      color: #6699FF;
+      animation: fadeIn 2s ease-in-out;
     }
     .btn {
-      background: #0099FF;
+      background: #FF6600;
       color: #fff;
       padding: 10px 20px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
     .btn:hover {
       background: #0066cc;
+      transform: scale(1.1);
     }
     .news {
-      padding: 10px 0;
+      padding: 60px 0;
       background: rgba(0, 0, 0, 0.6);
+      animation: fadeInUp 1.5s ease-in-out;
     }
     .news-item {
       display: flex;
@@ -126,15 +144,20 @@
       color: #000;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 40px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .news-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
     .news-item img {
       width: 300px;
       object-fit: cover;
     }
     .news-content {
-      padding: 10px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -142,12 +165,12 @@
     .news-content h2 {
       font-size: 24px;
       margin-bottom: 10px;
-      color: #9FD7F9;
+      color: #0099FF;
     }
     .news-content p {
       font-size: 16px;
       margin-bottom: 20px;
-      color: #0099FF;
+      color: #003300;
     }
     .btn-read {
       align-self: flex-start;
@@ -157,10 +180,11 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
     .btn-read:hover {
       background: #0066cc;
+      transform: scale(1.1);
     }
     footer {
       background: #0099FF;
@@ -171,9 +195,45 @@
       font-size: 14px;
       color: #fff;
     }
-    @media (max-width: 768px) {
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      footer p {
+        font-size: 12px;
+      }
+    }
+
     @media (max-width: 480px) {
       .hero h1 {
         font-size: 28px;
@@ -199,7 +259,7 @@
       </div>
       <nav>
         <ul>
-          <li><a href="tin-tuc.html">Tin tức</a></li>
+          <li><a href="https://www.mancity.com/fixtures">Tin tức</a></li>
           <li><a href="video.html">Video</a></li>
           <li class="dropdown"><a href="#">Lịch thi đấu <i class="fas fa-chevron-down"></i></a>
             <ul class="dropdown-menu">
@@ -225,18 +285,27 @@
             </ul>
           </li>
           <li><a href="more.html">More</a></li>
+          <!-- Add Sign In dropdown -->
+          <li class="dropdown sign-in-dropdown"><a href="#">Sign In <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="dang-ky.html">Đăng ký</a></li>
+              <li><a href="dang-nhap.html">Đăng nhập</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
+
   <section class="hero">
     <div class="hero-overlay">
       <h1>HEALTHIER LIVES THROUGH FOOTBALL</h1>
       <p>Khám phá niềm đam mê và sự xuất sắc của Manchester City FC.</p>
       <a href="about.html" class="btn">Learn More</a>
     </div>
-    </section>
-    <section class="news">
+  </section>
+
+  <section class="news">
     <div class="container">
       <div class="news-item">
         <img src="https://www.mancity.com/meta/media/2cmdusdh/pep-cl-presser-wide-2.jpg?width=1136&height=642&mode=crop" alt="Pep Guardiola">
@@ -245,21 +314,20 @@
           <p>Manchester City sẽ đối đầu với Real Madrid trong trận đấu đầy kịch tính...</p>
           <a href="news-detail.html" class="btn-read">Read More</a>
         </div>
-      </section>
-        <section class="news">
-    <div class="container">
+      </div>
       <div class="news-item">
         <img src="https://i.ytimg.com/vi/tPvfsCVpMNQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCDAy6ia-9vojGp5iFH41BBeB4TkQ" alt="Pep Guardiola">
         <div class="news-content">
           <h2>City 2-3 Real Madrid: Highlights</h2>
-          <p>Trận đấu diễn ra hấp dẫn ngay sau tiếng còi khai cuộc. Trong 15 phút đầu tiên, Real Madrid có 3 cơ hội để ghi bàn nhưng đều không tận dụng được. Và họ đã phải trả giá. Phút 19, Haaland dứt điểm cận thành sắc lẹm, đánh bại thủ môn Courtois giúp Man City vượt lên.</p>
+          <p>Trận đấu diễn ra hấp dẫn ngay sau tiếng còi khai cuộc...</p>
           <a href="news-detail.html" class="btn-read">Read More</a>
+        </div>
       </div>
     </div>
- 
   </section>
+
   <footer>
-     <div class="container">
+    <div class="container">
       <p>&copy; 2025 Manchester City FC. All rights reserved.</p>
     </div>
   </footer>
